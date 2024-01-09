@@ -1,0 +1,15 @@
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\bin\Debug\net6.0\RazorPages.Services.deps.json
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\bin\Debug\net6.0\RazorPages.Services.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\bin\Debug\net6.0\RazorPages.Services.pdb
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\bin\Debug\net6.0\RazorPages.Modelos.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\bin\Debug\net6.0\RazorPages.Modelos.pdb
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.csproj.AssemblyReference.cache
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.AssemblyInfoInputs.cache
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.AssemblyInfo.cs
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.csproj.CoreCompileInputs.cache
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.csproj.CopyComplete
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\refint\RazorPages.Services.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\RazorPages.Services.pdb
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Services\obj\Debug\net6.0\ref\RazorPages.Services.dll

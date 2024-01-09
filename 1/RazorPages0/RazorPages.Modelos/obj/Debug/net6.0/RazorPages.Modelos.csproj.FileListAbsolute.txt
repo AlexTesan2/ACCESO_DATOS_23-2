@@ -1,0 +1,12 @@
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\bin\Debug\net6.0\RazorPages.Modelos.deps.json
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\bin\Debug\net6.0\RazorPages.Modelos.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\bin\Debug\net6.0\RazorPages.Modelos.pdb
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.AssemblyInfoInputs.cache
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.AssemblyInfo.cs
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.csproj.CoreCompileInputs.cache
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\refint\RazorPages.Modelos.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.pdb
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\ref\RazorPages.Modelos.dll
+C:\Users\alext\OneDrive\Documentos\Visual Studio 2022\VS\RazorPages0\RazorPages.Modelos\obj\Debug\net6.0\RazorPages.Modelos.csproj.AssemblyReference.cache

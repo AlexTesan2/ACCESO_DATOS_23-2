@@ -1,0 +1,13 @@
+﻿@page
+@model ProjectFutbol.Pages.Equipos.DeleteModel
+@{
+}
+<h1>Confirmación de borrado</h1>
+<div class="alert alert-danger">
+    <h5>Esás seguro de que quieres eliminar al equipo - @Model.equipo.nomEquipo</h5>
+    <form method="post">
+        <button type="submit" class="btn btn-danger">Si</button>
+        <a asp-page="/Equipos/Index" class="btn btn-primary">No</a>
+    </form>
+</div>
+

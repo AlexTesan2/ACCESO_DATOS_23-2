@@ -1,0 +1,11 @@
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\bin\Debug\net6.0\Modelos.deps.json
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\bin\Debug\net6.0\Modelos.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\bin\Debug\net6.0\Modelos.pdb
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.AssemblyInfoInputs.cache
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.AssemblyInfo.cs
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\refint\Modelos.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\Modelos.pdb
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Modelos\obj\Debug\net6.0\ref\Modelos.dll

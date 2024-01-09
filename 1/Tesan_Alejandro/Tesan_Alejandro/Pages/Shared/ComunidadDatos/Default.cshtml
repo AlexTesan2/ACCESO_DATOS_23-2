@@ -1,0 +1,25 @@
+﻿@using Models
+@model IEnumerable<ComunidadInformacion>
+
+<h3>Datos de cada comunidad</h3>
+<table class="table table-bordered">
+    <thead class="thead-ligth">
+        <tr>
+            <th>Comunidad</th>
+            <th>Superficie</th>
+            <th>Nº Habitantes</th>
+            <th>Nº Provincias</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var com in @Model)
+        {
+            <tr>
+                <td>@com.Com</td>
+                <td>@com.superficie</td>
+                <td>@com.numHabitantes</td>
+                <td>@com.numProvincias</td>
+            </tr>
+        }
+    </tbody>
+</table>

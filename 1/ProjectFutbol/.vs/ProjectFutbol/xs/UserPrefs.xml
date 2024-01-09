@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{2C1A4A24-3D6A-4100-9607-C68423725A1F}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="ProjectFutbol/Pages/Equipos/Index.cshtml">
+    <Files>
+      <File FileName="ProjectFutbol/Pages/Index.cshtml" Line="1" Column="1" />
+      <File FileName="Services/EquipoRepositorio.cs" Line="32" Column="1" />
+      <File FileName="Modelos/Categoria.cs" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Index.cshtml" Line="10" Column="33" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Index.cshtml.cs" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Edit.cshtml" Line="56" Column="52" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Edit.cshtml.cs" Line="50" Column="40" />
+      <File FileName="ProjectFutbol/Pages/Shared/_Layout.cshtml" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Delete.cshtml" />
+      <File FileName="ProjectFutbol/Pages/Equipos/Details.cshtml" Line="20" Column="54" />
+      <File FileName="Services/IEquipoRepositorio.cs" Line="11" Column="14" />
+      <File FileName="Modelos/Equipo.cs" Line="3" Column="18" />
+      <File FileName="Services/FutbolDbContext.cs" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Program.cs" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/appsettings.json" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/_ViewImports.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/Error.cshtml" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/Privacy.cshtml" Line="1" Column="1" />
+      <File FileName="Modelos/CategoriaCuantos.cs" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Components/EquiposCategoriaViewComponent.cs" Line="1" Column="1" />
+      <File FileName="ProjectFutbol/Pages/Shared/Components/EquiposCategoria/Default.cshtml" Line="3" Column="47" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ProjectFutbol" expanded="True">
+            <Node name="ProjectFutbol">
+              <Node name="Pages" expanded="True">
+                <Node name="Equipos" expanded="True">
+                  <Node name="Edit.cshtml" expanded="True" />
+                  <Node name="Index.cshtml" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ProjectFutbol PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+</Properties>

@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "RazorPages.Service/1.0.0": {
+        "dependencies": {
+          "RazorPages.Modelos": "1.0.0"
+        },
+        "runtime": {
+          "RazorPages.Service.dll": {}
+        }
+      },
+      "RazorPages.Modelos/1.0.0": {
+        "runtime": {
+          "RazorPages.Modelos.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "RazorPages.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RazorPages.Modelos/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

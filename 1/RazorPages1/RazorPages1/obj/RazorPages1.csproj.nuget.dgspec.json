@@ -1,0 +1,185 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages1/RazorPages1.csproj": {}
+  },
+  "projects": {
+    "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj",
+        "projectName": "RazorPages.Modelos",
+        "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj",
+        "packagesPath": "/Users/alberto/.nuget/packages/",
+        "outputPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/alberto/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/RazorPages.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/RazorPages.Service.csproj",
+        "projectName": "RazorPages.Service",
+        "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/RazorPages.Service.csproj",
+        "packagesPath": "/Users/alberto/.nuget/packages/",
+        "outputPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/alberto/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj": {
+                "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages1/RazorPages1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages1/RazorPages1.csproj",
+        "projectName": "RazorPages1",
+        "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages1/RazorPages1.csproj",
+        "packagesPath": "/Users/alberto/.nuget/packages/",
+        "outputPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages1/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/alberto/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.309/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj": {
+                "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/RazorPages.Modelos.csproj"
+              },
+              "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/RazorPages.Service.csproj": {
+                "projectPath": "/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPages.Service/RazorPages.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

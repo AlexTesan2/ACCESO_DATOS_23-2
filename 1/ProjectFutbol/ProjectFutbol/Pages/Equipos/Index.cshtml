@@ -1,0 +1,56 @@
+﻿@page
+@model ProjectFutbol.Pages.Equipos.IndexModel
+@{
+}
+
+<div class="text-center">
+    <h1 class="display-4">Equipos</h1>
+    <h2>Total: <strong>@Model.Equipos.Count()</strong></h2>
+
+    <div class="col-sm-8 mx-auto">
+        <!--await Component.InvokeAsync("AlumnosCursoContar")-->
+        @await Component.InvokeAsync("EquiposCategoria")
+    </div>
+</div>
+
+
+<form method="get">
+    <div class="imput-ground">
+        <input class="form-control" asp-for="elementoABuscar"/>
+        <div class="input-group-appemd">
+            <button type="submit" class="btn btn-primary">Busca</button>
+        </div>
+    </div>  
+</form>
+
+
+
+
+<div class="card-group">
+    @foreach(var equipo in Model.Equipos)
+    {
+        //var photo = "~/images/" + (equipo.Foto ?? "noimage.jpg");
+        <div class="card m-3 border" style="min-width: 18rem; max-width:30%">
+            <div class="card-header text-center">
+                <h3>@equipo.nomEquipo</h3>
+            </div>
+
+            <div class="card-body">
+                <p>Id: <strong>@equipo.Id</strong></p>
+                <p>Ciudad: <strong>@equipo.ciudad</strong></p>
+                <p>Año de Fundación: <strong>@equipo.anoFundacion</strong></p>
+                <p>Nombre del Estadio: <strong>@equipo.nomEstadio</strong></p>
+            </div>
+
+            <div class="card-footer text-center">
+                <a asp-page="/Equipos/Details" asp-route-ID="@equipo.Id" class="btn btn-primary m1">View</a>
+                <a asp-page="/Equipos/Edit" asp-route-ID="@equipo.Id" class="btn btn-primary m1">Edit</a>
+                <a asp-page="/Equipos/Delete" asp-route-ID="@equipo.Id" class="btn btn-danger m-1">Erase</a>
+            </div>
+            <div class="card-img-overlay text-center" style="top: 50px; pointer-events:none;">
+                <img class="opacity-25 mx-auto" style="height: 200px; pointer-events:none;"  src="@equipo.imagen">
+            </div>
+
+        </div>
+    }
+</div>

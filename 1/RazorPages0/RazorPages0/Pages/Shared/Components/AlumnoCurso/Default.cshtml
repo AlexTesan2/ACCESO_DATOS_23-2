@@ -1,0 +1,19 @@
+﻿@model  IEnumerable<CursoCuantos>//espera recibir una lista de ojetos de la clase cursoCuantos
+<h3>Alunos por Curso</h3><!--es un trzo de codigo -->
+<table class="table table-bordered">
+	<thead class="thread-light">
+		<tr>
+			<th>Curso</th>
+			<th>Nº alumnos</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(var curso in Model)
+		{
+			<tr>
+				<td>@curso.Clase</td>
+				<td>@curso.NumAlumn</td>
+			</tr>
+		}
+	</tbody>
+</table>

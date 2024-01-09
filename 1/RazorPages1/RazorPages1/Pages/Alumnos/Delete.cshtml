@@ -1,0 +1,15 @@
+﻿@page
+@model RazorPages1.Pages.Alumnos.DeleteModel
+@{
+}
+
+<h1>Confirmación de borrado</h1>
+<div class="alert alert-danger">
+    <h5>Esás seguro de que quieres eliminar al alumno - @Model.alumno.Nombre</h5>
+        <form method="post">
+            <!--input type="hidden" asp-for="alumno.Id" /> No hace falta porque tenemos el BindProperty en alumno-->
+            <button type="submit" class="btn btn-danger">Si</button>
+            <a asp-page="/Alumnos/Index" class="btn btn-primary">No</a>
+        </form>
+</div>
+

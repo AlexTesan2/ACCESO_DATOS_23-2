@@ -1,0 +1,60 @@
+﻿@page
+@model RazorPages0.Pages.Alumnos.EditModel
+@{
+	var photo = "~/images/" + (Model.alumno.Foto ?? "noimage.jpg");
+	var titulo = Model.alumno.Id > 0 ? "Editar" : "Crear";
+}
+<h1>@titulo  alumno</h1>
+<form method="post" class="mt-3" enctype="multipart/form-data">
+	<input hidden asp-asp-for="alumno.Id" />
+	<input hidden asp-asp-for="alumno.Foto" />
+	<div class="form-group row">
+		<label asp-for="alumno.Nombre" class="col-sm-2 colfrom-label"></label>
+		<div class="col-sm-10">
+			<input asp-asp-for="alumno.Nombre" class="form-comtrol"placeholder="Nombre" />
+			<span asp-validation-for="alumno.Nombre" class="text-danger" ></span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label asp-for="alumno.Email" class="col-sm-2 colfrom-label"></label>
+		<div class="col-sm-10">
+			<input asp-asp-for="alumno.Email" class="form-comtrol" placeholder="Email" />
+			<span asp-validation-for="alumno.Email" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label asp-for="alumno.CursoID" class="col-sm-2 colfrom-label"></label>
+		<div class="col-sm-10">
+			<select asp-asp-for="alumno.CursoID" class="form-select mb-3"
+				asp-items="Html.GetEnumSelectList<Curso>()">
+				<option value="">Selecciona uno</option>
+			</select>
+			<span asp-validation-for="alumno.CursoID" class="text-danger"></span>
+		</div>
+	</div>
+
+	<div class="form-group row cpl-sm-4 offset-4">
+		<img class="imageThumbali" src="@photo" asp-append-version="true" />
+		<div class="col-sm-10">
+			<input asp-for="Photo" class="custom-file-input form-control" value="@Model.alumno.Foto" />
+			<label class="custom-file-label">Click para cambiar foto</label>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<div class="col-sm-10">
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a asp-asp-page="/Alumnos/Index" class="btn btn-primary">Cancel</a>
+		</div>
+	</div>
+</form>
+	@section Scripts{
+		<script>
+			$(document).ready(function () {
+				$('.custom-file-input').on("change", function () {
+					var fileName = $(this).val().split("\\").pop();
+					$(this).next('.custom-file-label').html(fileName);
+				})
+			})
+		</script>
+	}

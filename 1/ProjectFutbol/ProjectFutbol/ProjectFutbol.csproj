@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Pages\Equipos\" />
+    <None Remove="Components\" />
+    <None Remove="Pages\Shared\Components\" />
+    <None Remove="Pages\Shared\Components\EquiposCategoria\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Equipos\" />
+    <Folder Include="Components\" />
+    <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="Pages\Shared\Components\EquiposCategoria\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.13" />
+  </ItemGroup>
+</Project>

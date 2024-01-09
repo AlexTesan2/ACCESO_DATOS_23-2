@@ -1,0 +1,67 @@
+﻿@page
+@model ProjectFutbol.Pages.Equipos.EditModel
+@{
+    var titulo = Model.equipo.Id > 0 ? "Edición datos " : "Creación ";
+}
+
+
+<h1 align="center"> @titulo de Equipo</h1>
+<form method="post" class="mt-3" enctype="multipart/form-data">
+
+    <!--se suele utilizar el método POST-->
+    <input type="hidden" asp-for="equipo.Id" /><!--con esto sacamos los atributos, no los mostramos pero los tenemos-->
+
+    <div class="form-group row">
+        <label asp-for="equipo.nomEquipo" class="col-sm-2 col-form-label">Nombre del Equipo</label>
+        <div class="col-sm-10">
+            <input asp-for="equipo.nomEquipo" class="form-control" placeholder="Nombre" />
+            <span asp-validation-for="equipo.nomEquipo" class="text-danger"></span><!--Las validaciones se especifican en los modelos-->
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="equipo.categoria" class="col-sm-2 col-form-label">Categoría:</label>
+        <div class="col-sm-10">
+            <select asp-for="equipo.categoria" class="form-select mb-3" asp-items="Html.GetEnumSelectList<Categoria>()">
+                <!--Añadido el using Modelos en _ViewImports.cshtml-->
+                <option value="Selecciona uno">Selecciona uno</option>
+            </select>
+            <span asp-validation-for="equipo.categoria" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="equipo.ciudad" class="col-sm-2 col-form-label">Ciudad</label>
+        <div class="col-sm-10">
+            <input asp-for="equipo.ciudad" class="form-control" placeholder="Ciudad" />
+            <span asp-validation-for="equipo.ciudad" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="equipo.nomEstadio" class="col-sm-2 col-form-label">Nombre del Estadio</label>
+        <div class="col-sm-10">
+            <input asp-for="equipo.nomEstadio" class="form-control" placeholder="Nombre del Estadio" />
+            <span asp-validation-for="equipo.nomEstadio" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="equipo.anoFundacion" class="col-sm-2 col-form-label">Año de fundación</label>
+        <div class="col-sm-10">
+            <input asp-for="equipo.anoFundacion" class="form-control" type="number" placeholder="Año de fundación" />
+            <span asp-validation-for="equipo.anoFundacion" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="equipo.imagen" class="col-sm-2 col-form-label">Url imagen</label>
+        <div class="col-sm-10">
+            <input asp-for="equipo.imagen" class="form-control" type="text" placeholder="url imagen" />
+            <span asp-validation-for="equipo.imagen" class="text-danger"></span>
+        </div>
+    </div>
+
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a asp-page="/Alumnos/Index" class="btn btn-promary">Cancel</a>
+        </div>
+    </div>
+</form>

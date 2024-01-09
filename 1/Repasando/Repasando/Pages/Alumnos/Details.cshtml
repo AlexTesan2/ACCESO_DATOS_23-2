@@ -1,0 +1,24 @@
+﻿@page
+@model Repasando.Pages.Alumnos.DetailsModel
+@{
+	var Foto = "~/Imgs/" + (Model.Alumm.Foto ?? "sinImagen.jpg");
+}
+
+<div class="col-sm-8">
+	@await Component.InvokeAsync("AlumnosCurso", new{Curso=Model.Alumm.CursoId})
+</div>
+
+<div class="card m-3" style="min-width: 18rem; max-height: 30%">
+	<div class="card-header">
+		<h3>@Model.Alumm.Name</h3>
+	</div>
+	<div class="card-body">
+		<img class="card-img-top img-thumbnail" asp-append-version="true" src="@Foto">
+	</div>
+	<div class="card-footer text-center">
+		<p>Id: @Model.Alumm.ID</p>
+		<p>CursoId: @Model.Alumm.CursoId</p>
+		<a asp-page="#" class="btn btn-primary m1">Edit</a>
+		<a asp-page="#" class="btn btn-danger m1">Dele</a>
+	</div>
+</div>

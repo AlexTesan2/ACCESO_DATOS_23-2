@@ -1,0 +1,15 @@
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\bin\Debug\net6.0\Services.deps.json
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\bin\Debug\net6.0\Services.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\bin\Debug\net6.0\Services.pdb
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\bin\Debug\net6.0\Modelos.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\bin\Debug\net6.0\Modelos.pdb
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.csproj.AssemblyReference.cache
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.AssemblyInfoInputs.cache
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.AssemblyInfo.cs
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.csproj.CopyComplete
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\refint\Services.dll
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\Services.pdb
+C:\Users\alext\Desktop\AGUSTIN_2º\AAD\ultimos\AAD\ProjectFutbol\Services\obj\Debug\net6.0\ref\Services.dll

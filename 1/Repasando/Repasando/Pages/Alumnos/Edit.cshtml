@@ -1,0 +1,62 @@
+﻿@page
+@using Modelos;
+@model Repasando.Pages.Alumnos.EditModel
+@{
+	var Foto = "~/Imgs/" + (Model.alumno?.Foto ?? "sinImagen.jpg");
+	var titulo = Model.alumno.ID > 0 ? "Editar " : "Insertar ";
+}
+<h2>@titulo alumno</h2>
+<form method="post" class="mt-3" enctype="multipart/form-data">
+	<input hidden asp-asp-for="alumno.id" />
+	<input hidden asp-asp-for="alumno.Foto" />
+	<div class="form-group row">
+		<label asp-for="alumno.Name" class="col-sm-2 col-form-label"></label>
+		<div class="col-sm-10">
+			<input asp-for="alumno.Name" class="form-control" placeholder="Nombre:" />
+			<span asp-validation-for="alumno.Name" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label asp-for="alumno.CursoId" class="col-sm-2 col-form-label"></label>
+		<div class="col-sm-10">
+			<select asp-for="alumno.CursoId" class="form-select mb-3"
+				asp-items="Html.GetEnumSelectList<Curso>()">
+					<option value="">Selecciona uno: </option>
+				</select>
+			<span asp-validation-for="alumno.CursoId" class="text-danger"></span>
+		</div>
+	</div>
+	<div class="form-group row">
+		<label asp-for="Photo" class="col-sm-2 col-form-label"></label>
+		<div class="col-sm-10">
+			<input asp-for="Photo" class="custom-file-input" value="@Model.alumno.Foto" onchange="lafoto.value = this.value.substring(this.value.lastIndexOf('\\')+1)" />
+			<label class="custom-file-label">Click aquí para cambiar foto</label>
+		</div>
+	</div>
+
+	<div class="form-group row col-sm-4">
+		<img class="img-thumbnail" src="@Foto" asp-append-version="true"/>
+	</div>
+	<div class="form-group row">
+		<div class="col-sm-10">
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a asp-page="/Alumnos/Alumnos" class="btn btn-primary" >Cancel</a>
+		</div>
+	</div>
+</form>
+
+@section Scripts{
+	<!--<partial name="_ValidationScriptsPartial" /> <!--Esta linea es para que coja las validaciones en el lado del cliente, no es lo mejor-->
+	<script>
+		$(document).ready(function () {
+			$('.custom-file-input').on("change", function () {
+				//este objeto (custom-file-input), su valor concatena con \\
+				//y pop que es de jquery extrae de la pila algo 
+				var fileName = $(this).val().split("\\").pop();
+				//al siguiente objeto label de estos le pones el fileName
+				$(this).next('.custom-file-label').html(fileName);
+			})
+		})
+	</script>
+
+}

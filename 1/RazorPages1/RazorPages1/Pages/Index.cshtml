@@ -1,0 +1,11 @@
+﻿@page
+@model IndexModel /* El modelo que cojo es IndexModel, estamos vinculando el controlador (Index.cshtml.cs) con esta vista (Index.cshtml)*/
+@{
+    /* LA @ indica que trabajamos con ASP con programación */
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@Model.Mensaje</h1> <!--Mensaje es un atributo del objeto model-->
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>

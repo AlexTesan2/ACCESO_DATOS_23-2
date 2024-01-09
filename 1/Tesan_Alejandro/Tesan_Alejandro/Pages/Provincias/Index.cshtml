@@ -1,0 +1,22 @@
+﻿@page
+@model Tesan_Alejandro.Pages.Provincias.IndexModel
+@{
+}
+<div class="col-sm-8">
+	@await Component.InvokeAsync("ComunidadDatos")
+</div>
+
+<form method="get">
+    <select>
+        @foreach(var elemento in Model.comu)
+        {
+            <option>@elemento</option>
+        }
+    </select>
+</form>
+
+
+
+<div class="col-sm-8">
+    @await Component.InvokeAsync("ComunidadDatos", new { Comunidad = Model.comu })
+</div>

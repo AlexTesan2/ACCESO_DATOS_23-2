@@ -1,0 +1,31 @@
+﻿@page
+@model RazorPages1.Pages.Alumnos.IndexModel
+@{
+}
+<h1>Alumnos</h1>
+<h3>@Model.Alumnos.Count()</h3><!--ponemos la arroba para trabajar con ASP-->
+<div class="col-sm-8">
+    <!--await Component.InvokeAsync("AlumnosCursoContar")-->
+    @await Component.InvokeAsync("AlumnoCurso")
+</div>
+<div class="card-deck">
+    @foreach(var alumno in Model.Alumnos)
+    //ponemos var por comodidad pero se podría poner Alumno, que sería más específico, pero
+    // este lenguaje traga
+    {
+        var photo = "~/images/" + (alumno.Foto ?? "noimage.jpg");
+        <div class="card m-3" style="min-width: 18rem; max-width:30%">
+            <div class="card-header">
+                <h3>@alumno.Nombre</h3>
+            </div>
+            <img class="card-img-top imageThumbail" asp-append-version="true" src="@photo">
+            <div class="card-footer text-center">
+                <!--Aquí creamos un enlace a la pagina de detalles, pasándole un entero con la identificación del alumno-->
+                <a asp-page="/Alumnos/Details" asp-route-ID="@alumno.Id" class="btn btn-primary m1">View</a>
+                <a asp-page="/Alumnos/Edit" asp-route-ID="@alumno.Id" class="btn btn-primary m1">Edit</a>
+                <a asp-page="/Alumnos/Delete" asp-route-ID="@alumno.Id" class="btn btn-danger m-1">Erase</a>
+            </div>
+
+        </div>
+    }
+</div>

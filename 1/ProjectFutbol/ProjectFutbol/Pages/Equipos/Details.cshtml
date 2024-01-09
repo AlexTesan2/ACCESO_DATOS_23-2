@@ -1,0 +1,22 @@
+﻿@page
+@model ProjectFutbol.Pages.Equipos.DetailsModel
+@{
+}
+
+<div class="card m-3" align="center" style="min-width: 12rem; max-width:80%">
+    <div class="card-header">
+        <h3>@Model.equipo.nomEquipo</h3>
+    </div>
+
+    <div class="card-body text-center">
+        <p>Id: @Model.equipo.Id</p>
+        <p>Ciudad: @Model.equipo.ciudad</p>
+        <p>Categoría: @Model.equipo.categoria</p>
+        <p>Estadio: @Model.equipo.nomEstadio</p>
+        <p>Fundación: @Model.equipo.anoFundacion</p>
+
+    </div>
+    <div class="card-img-top " style="height: 200px; pointer-events:none;">
+        <img  style="height: 200px; pointer-events:none;" src="@Model.equipo.imagen">
+    </div>
+</div>

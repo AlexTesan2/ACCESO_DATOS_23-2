@@ -1,0 +1,12 @@
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/bin/Release/net6.0/RazorPages.Modelos.deps.json
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/bin/Release/net6.0/RazorPages.Modelos.dll
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/bin/Release/net6.0/RazorPages.Modelos.pdb
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.csproj.AssemblyReference.cache
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.AssemblyInfoInputs.cache
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.AssemblyInfo.cs
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.csproj.CoreCompileInputs.cache
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.dll
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/refint/RazorPages.Modelos.dll
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/RazorPages.Modelos.pdb
+/Users/alberto/gitSalesianos/AAD/RazorPages1/RazorPage/obj/Release/net6.0/ref/RazorPages.Modelos.dll

@@ -1,0 +1,26 @@
+﻿@page
+@model RazorPages0.Pages.Alumnos.DetailsModel
+@{
+	var photo = "~/images/" + (Model.alumno.Foto ?? "noimage.jpg");
+}
+<div class="col-sm-8">
+	@await Component.InvokeAsync("AlumnoCurso", new{curso = Model.alumno.CursoID})
+</div>
+<div class="row justify-content-center m-3">
+	<div class="card m-3">
+		<div class="card-header text-center">
+			<h3>@Model.alumno.Nombre</h3>
+		</div>
+		<div class="card-body text-center">
+			<img class="card-img-top" asp-append-version="true" src="@photo">
+			<h4>Alummno ID: @Model.alumno.Id</h4>
+			<h4>Email: @Model.alumno.Email</h4>
+			<h4>Curso: @Model.alumno.CursoID</h4>
+		</div>
+		<div class="card-footer text-center">
+			<a asp-page="Index" class="btn btn-primary m1">Back</a>
+			<a asp-page="#" class="btn btn-primary m-1">Edit</a>
+			<a asp-page="#" class="btn btn-danger m-1">Delete</a>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CategoriaCuantos>
+<h3 class="text-center">Equipos por Categoria</h3>
+<table class="table table-bordered text-center">
+    <thead class="thead-ligth">
+        <tr>
+            <th>Categoria</th>
+            <th>Nº Equipos</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var categoriaCuantos in Model)
+        {
+            <tr>
+                <td>@categoriaCuantos.Categoria</td>
+                <td>@categoriaCuantos.NumEquipos</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
