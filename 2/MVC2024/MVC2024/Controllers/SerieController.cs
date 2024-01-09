@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC2024.Models;
-
+//trabaaremos con dos tablas; marca y serie 
 namespace MVC2024.Controllers
 {
 	public class SerieController : Controller

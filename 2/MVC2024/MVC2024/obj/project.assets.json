@@ -11114,11 +11114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\MVC2024\\MVC2024\\MVC2024.csproj",
+      "projectUniqueName": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\mio\\2\\MVC2024\\MVC2024\\MVC2024.csproj",
       "projectName": "MVC2024",
-      "projectPath": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\MVC2024\\MVC2024\\MVC2024.csproj",
+      "projectPath": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\mio\\2\\MVC2024\\MVC2024\\MVC2024.csproj",
       "packagesPath": "C:\\Users\\alext\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\MVC2024\\MVC2024\\obj\\",
+      "outputPath": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\mio\\2\\MVC2024\\MVC2024\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\alext\\AppData\\Roaming\\NuGet\\NuGet.Config",
