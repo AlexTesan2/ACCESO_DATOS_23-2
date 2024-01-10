@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using MVC2024.Models;
-//trabaaremos con dos tablas; marca y serie 
+//trabajaremos con dos tablas; marca y serie 
 namespace MVC2024.Controllers
 {
 	public class SerieController : Controller
@@ -16,7 +17,8 @@ namespace MVC2024.Controllers
         // GET: SerieController
         public ActionResult Index()
 		{
-			return View();
+			List<SerieModelo> lista = Contexto.Series.Include(s => s.Marca).ToList();
+			return View(lista);
 		}
 
 		// GET: SerieController/Details/5
@@ -51,7 +53,7 @@ namespace MVC2024.Controllers
 			Contexto.SaveChanges();
 			try
 			{
-				return RedirectToAction(nameof(Index));
+				return RedirectToAction(nameof(Create));
 			}
 			catch
 			{
