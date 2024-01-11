@@ -3,25 +3,26 @@
 @{
     ViewData["Title"] = "Index";
 }
-<!--inicialmente no funcionara pq el index espera recibir una lista (1º linea), pero no se la estas pasando-->
+<!--inicialmente no funcionara pq el index espera recibir una lista, pero no se la estas pasando-->
 <h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
 </p>
 <table class="table">
-    <thead>
+    <thead><!--encabezado de la tabla-->
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NomSerie)
+                @Html.DisplayName("Modelo")
             </th>
+            <!--2 formas de hacer lo mismo-->
             <th>
                 @Html.DisplayNameFor(model => model.Marca)
             </th>
             <th></th>
         </tr>
     </thead>
-    <tbody><!--var es serie-modelo-->
+    <tbody><!--item es un objeto de la clase serie-modelo-->
 @foreach (var item in Model) {
         <tr>
             <td>
@@ -30,6 +31,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Marca.Nom_Marca)
             </td>
+            <!--Atributo propio de otra clase-->
             <td>
                 @Html.DisplayFor(modelItem => item.MarcaId)
             </td>

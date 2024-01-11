@@ -16,7 +16,7 @@ namespace MVC2024.Controllers
         // GET: MarcaController
         public ActionResult Index()
         {
-            List<MarcaModelo> lista= Contexto.Marcas.ToList();
+            List<MarcaModelo> lista= Contexto.Marcas.ToList();  //var lista = Contexto.Marcas.ToList();
             return View(lista);
         }
 

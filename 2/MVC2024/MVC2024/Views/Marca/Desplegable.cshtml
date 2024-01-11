@@ -4,9 +4,11 @@
 	new SelectListItem{Text= "Opel", Value="1" , Selected=true},
 	new SelectListItem{Text= "Ferrari", Value="2"},
 	new SelectListItem{Text= "Mercedes", Value="3 "},
-}, "Selecciona una marca")										<!--Este solo muestra las opciones que son  SelectListItem-->
+}, "Selecciona una marca")										<!--Este solo muestra las opciones que son  SelectListItem ya preescritas-->
+
 
 @Html.DropDownList("Marcas", "Selecciona una marca")			<!--Este accede a la base de datos del sqlserver-->
+																<!--Son 3 seleccionables diferenes, Marcas es un contenedor cargado en el controlador-->
 
 <select id="unasmarcas" name="unasmarcas">
 	@foreach (var item in ViewBag.Marcas2)
