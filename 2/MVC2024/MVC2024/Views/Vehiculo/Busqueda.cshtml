@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MVC2024.Models.VehiculoModelo>
+
+@{
+    ViewData["Title"] = "Busqueda";
+}
+
+<h1>Busqueda</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+<form method="get">
+    <input type="search" id="busca" name="busca" placeholder="Buscar por matricula" value="@ViewBag.num"/>
+    <!--el imput se debe llamar igual a la varaible que esprera recibir el controlador-->
+    <input type="submit" value="Busca"/>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("MATRICULA")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayName("modelo")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serie.NomSerie)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

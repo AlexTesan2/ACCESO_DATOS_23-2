@@ -24,11 +24,6 @@ namespace MVC2024.Controllers
         //1 se ejecuta el metodo del controlador correspondiente a la vista, y luego la vista
 		//contexto es la base de datos (en la ram), series es un DbSet de serie-modelo (una lista)
 
-        // GET: SerieController/Details/5
-        public ActionResult Details(int id)
-		{
-			return View();
-		}
 
 		// GET: SerieController/Create
 		public ActionResult Create()
@@ -64,6 +59,11 @@ namespace MVC2024.Controllers
 			}
 		}
 
+        // GET: SerieController/Details/5
+        public ActionResult Details(int id)
+		{
+			return View();
+		}
 		// GET: SerieController/Edit/5
 		public ActionResult Edit(int id)
 		{

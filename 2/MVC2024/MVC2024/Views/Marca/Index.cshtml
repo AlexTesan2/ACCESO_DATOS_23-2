@@ -4,7 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Listado</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -15,11 +15,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Nom_Marca)
             </th>
-            <th></th>
+            <!--este es el encabezado de la tabla-->
         </tr>
     </thead>
     <tbody>
-@foreach (MarcaModelo item in Model) {
+        @foreach (MarcaModelo item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nom_Marca)
@@ -30,6 +30,6 @@
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
         </tr>
-}
+        }
     </tbody>
 </table>

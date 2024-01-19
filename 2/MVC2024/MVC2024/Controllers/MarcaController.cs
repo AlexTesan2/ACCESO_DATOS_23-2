@@ -28,6 +28,32 @@ namespace MVC2024.Controllers
         }
 
         // GET: MarcaController/Details/5
+        // POST: MarcaController/Create   cuando haces click en el boton de submit del formulario de insercion
+        //en este caso, es el controador el que espera recibir los datos de la vista
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(MarcaModelo marca)
+        {
+			if (Contexto == null)
+			{
+		        throw new ArgumentNullException(nameof(Contexto));
+			}
+			if (marca == null)
+			{
+				throw new ArgumentNullException(nameof(marca));
+			}
+			Contexto.Marcas.Add(marca);         //metes los datos en memoria ram
+            Contexto.Database.EnsureCreated();  //si la bd no existe, la crea
+            Contexto.SaveChanges();
+            try
+            {
+                return RedirectToAction(nameof(Create));
+            }
+            catch
+            {
+                return View();
+            }
+        }
         public ActionResult Details(int id)
         {
 
@@ -41,32 +67,6 @@ namespace MVC2024.Controllers
             return View();
         }
 
-        // POST: MarcaController/Create   cuando haces click en el boton de submit del formulario de insercion
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(MarcaModelo marca)
-        {
-			if (Contexto == null)
-			    {
-				    throw new ArgumentNullException(nameof(Contexto));
-			    }
-
-			    if (marca == null)
-			    {
-				    throw new ArgumentNullException(nameof(marca));
-			    }
-			Contexto.Marcas.Add(marca);         //metes los datos en memoria ram
-            Contexto.Database.EnsureCreated();  //si la bd no existe, la crea
-            Contexto.SaveChanges();
-            try
-            {
-                return RedirectToAction(nameof(Create));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: MarcaController/Edit/5
         public ActionResult Edit(int id)
