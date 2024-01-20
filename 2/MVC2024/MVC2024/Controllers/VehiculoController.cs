@@ -49,19 +49,22 @@ namespace MVC2024.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.SLSerieId = new SelectList(Contexto.Series, "Id", "NomSerie");
-            var coche = Contexto.Vehiculos.FirstOrDefault(v => v.Id == id);
+            var coche = Contexto.Vehiculos.FirstOrDefault(v => v.Id == id);//Vehiculos.Find(id);
             return View(coche);
         }
 
         // POST: VehiculoController1/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection, VehiculoModelo vehiculoActualizado)
+        public ActionResult Edit(int id, VehiculoModelo cocheActualizado)
         {
+            VehiculoModelo cocheAntiguo = Contexto.Vehiculos.Find(id);
+            cocheAntiguo.Matricula = cocheActualizado.Matricula;
+            cocheAntiguo.Serie = cocheActualizado.Serie;
+            cocheAntiguo.Color = cocheActualizado.Color;
+            cocheAntiguo.SerieId = cocheActualizado.SerieId;
+            Contexto.SaveChanges();
 
-            /*var vehiculoAct= Contexto.Vehiculos.Attach(vehiculoActualizado);
-            vehiculoAct.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            Contexto. SaveChanges;*/
             try
             {
                 return RedirectToAction(nameof(Index));
@@ -75,7 +78,8 @@ namespace MVC2024.Controllers
         // GET: VehiculoController1/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            VehiculoModelo vehiculo = Contexto.Vehiculos.Include(v => v.Serie.Marca).FirstOrDefault(v => v.Id == id);
+            return View(vehiculo);
         }
 
 
