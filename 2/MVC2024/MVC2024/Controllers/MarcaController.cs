@@ -27,6 +27,13 @@ namespace MVC2024.Controllers
             return View();
         }
 
+
+        public ActionResult Listado(int id)
+        {
+            List<MarcaModelo> lista = Contexto.Marcas.ToList();
+            return View(lista);
+        }
+
         // GET: MarcaController/Details/5
         // POST: MarcaController/Create   cuando haces click en el boton de submit del formulario de insercion
         //en este caso, es el controador el que espera recibir los datos de la vista

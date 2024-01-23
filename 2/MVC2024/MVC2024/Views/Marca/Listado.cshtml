@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MVC2024.Models.MarcaModelo>
+
+@{
+    ViewData["Title"] = "Listado";
+}
+
+<h1>Listado</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Marcas")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td align="center">
+                    <a asp-action="listado" asp-controller="Serie" asp-route-id="@item.Id">@item.Nom_Marca</a>
+                </td>
+            </tr>
+            <!--al controlador de la pagina listado de SerieController, le pasamos el id de la marca seleccionada-->
+        }
+    </tbody>
+</table>

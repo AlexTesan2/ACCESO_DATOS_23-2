@@ -1,0 +1,41 @@
+﻿@model MarcaModelo
+
+@{
+    ViewData["Title"] = "listado";
+}
+
+<h1>@Model.Nom_Marca</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nombre Serie")
+            </th>
+            <th>
+                @Html.DisplayName("Id")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.LasSeries)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -20,13 +20,22 @@ namespace MVC2024.Controllers
 			List<SerieModelo> lista = Contexto.Series.Include(s => s.Marca).ToList();
 			return View(lista);
         }
-		//importante el Include, permite acceder a los atributos de otra clase
+        //importante el Include, permite acceder a los atributos de otra clase
         //1 se ejecuta el metodo del controlador correspondiente a la vista, y luego la vista
-		//contexto es la base de datos (en la ram), series es un DbSet de serie-modelo (una lista)
+        //contexto es la base de datos (en la ram), series es un DbSet de serie-modelo (una lista)
 
 
-		// GET: SerieController/Create
-		public ActionResult Create()
+
+        public ActionResult listado(int id)
+        {
+            MarcaModelo marca = Contexto.Marcas.Include(s => s.LasSeries).FirstOrDefault(s => s.Id == id);
+            return View(marca);
+        }
+
+
+
+        // GET: SerieController/Create
+        public ActionResult Create()
 		{
 			ViewBag.MarcaId = new SelectList(Contexto.Marcas, "Id", "Nom_Marca");
 			return View();

@@ -81,9 +81,9 @@ namespace MVC2024.Controllers
             VehiculoModelo vehiculo = Contexto.Vehiculos.Include(v => v.Serie.Marca).FirstOrDefault(v => v.Id == id);
             return View(vehiculo);
         }
+        // Otra opcion: Contexto.Vehiculos.Include("Serie.Marca")
 
-
-        // POST: VehiculoController1/Create
+        // POST: VehiculoController1/Create 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(VehiculoModelo vehiculo)
@@ -106,14 +106,18 @@ namespace MVC2024.Controllers
         // GET: VehiculoController1/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            VehiculoModelo vehiculo = Contexto.Vehiculos.Find(id);
+            return View(vehiculo);
         }
 
         // POST: VehiculoController1/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, VehiculoModelo cocheAEliminar)
         {
+            Contexto.Vehiculos.Remove(cocheAEliminar);
+            Contexto.Database.EnsureCreated();
+            Contexto.SaveChanges();
             try
             {
                 return RedirectToAction(nameof(Index));
