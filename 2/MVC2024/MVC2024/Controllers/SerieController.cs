@@ -25,7 +25,7 @@ namespace MVC2024.Controllers
         //contexto es la base de datos (en la ram), series es un DbSet de serie-modelo (una lista)
 
 
-
+		//listado recibe un id de una marca, que se lo envio desde la vista de listado de marcas
         public ActionResult listado(int id)
         {
             MarcaModelo marca = Contexto.Marcas.Include(s => s.LasSeries).FirstOrDefault(s => s.Id == id);

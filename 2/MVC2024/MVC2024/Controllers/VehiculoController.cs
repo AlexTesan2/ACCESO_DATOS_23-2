@@ -38,6 +38,33 @@ namespace MVC2024.Controllers
         }
         //parametros: 1-de donde saca los datos, 2-value (lo q se guarda), 3-text (lo q se vee) y 4-selected (seleccionado por defecto)
 
+        public ActionResult PaginaMultiple(string busca = "", string ser = "")
+        {
+            ViewBag.Marcas4 = new SelectList(Contexto.Marcas, "Nom_Marca", "Nom_Marca", busca);
+
+            if (!string.IsNullOrEmpty(busca))
+            {
+                var seriesQuery = from s in Contexto.Series.Include(s => s.Marca)
+                                  where s.Marca.Nom_Marca.Equals(busca)
+                                  select s;
+
+                ViewBag.Series2 = new SelectList(seriesQuery, "NomSerie", "NomSerie", ser);
+
+                if (!string.IsNullOrEmpty(ser))
+                {
+                    List<VehiculoModelo> listav = (from v in Contexto.Vehiculos.Include(v => v.Serie)
+                                         where v.Serie.NomSerie.Equals(ser)
+                                         select v).ToList();
+
+                    return View(listav);
+                }
+            }
+
+            return View(new List<VehiculoModelo>());
+        }
+
+
+
         // GET: VehiculoController1/Create
         public ActionResult Create()
         {
