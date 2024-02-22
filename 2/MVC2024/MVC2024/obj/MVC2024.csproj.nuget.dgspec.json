@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\alext\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alext\\Desktop\\AGUSTIN_2º\\AAD\\mio\\2\\MVC2024\\MVC2024\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\alext\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<MVC2024.Controllers.VehiculoController.VehiculoTotal>
+
+@{
+    ViewData["Title"] = "ListadoVehiculoTotal";
+}
+
+<h1>ListadoVehiculoTotalConProcedimientoAlmacenado</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Marca")
+            </th>
+            <th>
+                @Html.DisplayName("Modelo")
+            </th>
+            <th>
+                @Html.DisplayName("Matricula")
+            </th>
+            <th>
+                @Html.DisplayName("Color")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nom_Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomSerie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Matricula)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

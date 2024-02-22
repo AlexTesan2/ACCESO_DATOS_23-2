@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using MVC2024.Models;
 
@@ -8,6 +9,45 @@ namespace MVC2024.Controllers
 {
     public class VehiculoController : Controller
     {
+
+        //se puede crear uan clase dentro de una clase
+        public class VehiculoTotal
+        {
+            public string Nom_Marca { get; set; }
+            public string NomSerie { get; set; }
+            public string Matricula { get; set; }
+            public string Color { get; set; }
+        }
+
+
+        public ActionResult ListadoVehiculoTotal()
+        {
+            var ListaVehiculoTotal= Contexto.VistaTotal.FromSql($"SELECT Marcas.Nom_Marca, Series.NomSerie, Vehiculos.Matricula, Vehiculos.Color FROM Marcas INNER JOIN Series ON Marcas.Id = Series.MarcaId INNER JOIN Vehiculos ON Series.Id = Vehiculos.SerieId");
+            return View(ListaVehiculoTotal);
+        }
+        //List<VehiculoTotal> ListaVehiculoTotal = Contexto.VistaTotal.ToList();
+
+        public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado() //Para Agustin: Listado3
+        {
+            var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"EXECUTE getSeriesVehiculos");
+            return View(ListaVehiculoTotal);
+        }
+
+        public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado2(string color="%")
+        {
+            ViewBag.color = new SelectList(Contexto.Vehiculos.Select(v => new {Color = v.Color}).Distinct(), "Color", "Color");
+            var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"EXECUTE getVehiculosPorColor {color}");
+            return View(ListaVehiculoTotal);
+        }
+
+        public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado3(string color = "%")
+        {
+            var elColor = new SqlParameter("@ColorSel", color);
+            ViewBag.color = new SelectList(Contexto.Vehiculos.Select(v => new { Color = v.Color }).Distinct(), "Color", "Color");
+            var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"EXECUTE getVehiculosPorColor {elColor}");
+            return View(ListaVehiculoTotal);
+        }
+
         public Contexto Contexto { get; }
         public VehiculoController(Contexto contexto)
         {
@@ -16,8 +56,9 @@ namespace MVC2024.Controllers
         // GET: VehiculoController1
         public ActionResult Index()
         {
-            //Viewbag.marcas=Contexto.Marcas.ToList();
-            List<VehiculoModelo> listav = Contexto.Vehiculos.Include(v => v.Serie.Marca).ToList();
+            ViewBag.marcas=Contexto.Marcas.ToList();
+            List<VehiculoModelo> listav = Contexto.Vehiculos.Include(v => v.Serie.Marca).Include(v => v.VehiculoExtras).ToList();
+            ViewBag.ex= Contexto.Extras.ToList();
             return View(listav);
         }
 
@@ -38,29 +79,13 @@ namespace MVC2024.Controllers
         }
         //parametros: 1-de donde saca los datos, 2-value (lo q se guarda), 3-text (lo q se vee) y 4-selected (seleccionado por defecto)
 
-        public ActionResult PaginaMultiple(string busca = "", string ser = "")
+        
+        public ActionResult Seleccion(int marcaId = 1, int serieId= 0)
         {
-            ViewBag.Marcas4 = new SelectList(Contexto.Marcas, "Nom_Marca", "Nom_Marca", busca);
-
-            if (!string.IsNullOrEmpty(busca))
-            {
-                var seriesQuery = from s in Contexto.Series.Include(s => s.Marca)
-                                  where s.Marca.Nom_Marca.Equals(busca)
-                                  select s;
-
-                ViewBag.Series2 = new SelectList(seriesQuery, "NomSerie", "NomSerie", ser);
-
-                if (!string.IsNullOrEmpty(ser))
-                {
-                    List<VehiculoModelo> listav = (from v in Contexto.Vehiculos.Include(v => v.Serie)
-                                         where v.Serie.NomSerie.Equals(ser)
-                                         select v).ToList();
-
-                    return View(listav);
-                }
-            }
-
-            return View(new List<VehiculoModelo>());
+            ViewBag.lasMarcas = new SelectList(Contexto.Marcas,"Id", "Nom_Marca", marcaId);
+            ViewBag.lasSeries = new SelectList(Contexto.Series.Where(s => s.MarcaId == marcaId),"Id", "NomSerie", serieId);
+            List<VehiculoModelo> vehiculos = Contexto.Vehiculos.Where(v => v.SerieId == serieId).ToList();
+            return View(vehiculos);
         }
 
 
@@ -69,6 +94,7 @@ namespace MVC2024.Controllers
         public ActionResult Create()
         {
             ViewBag.SerieId = new SelectList(Contexto.Series, "Id", "NomSerie");
+            ViewBag.VehiculosExtras = new MultiSelectList(Contexto.Extras, "Id", "Name");
             return View();
         }
 
@@ -76,7 +102,11 @@ namespace MVC2024.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.SLSerieId = new SelectList(Contexto.Series, "Id", "NomSerie");
-            var coche = Contexto.Vehiculos.FirstOrDefault(v => v.Id == id);//Vehiculos.Find(id);
+            VehiculoModelo coche = Contexto.Vehiculos.Find(id);
+
+            coche.ExtrasSeleccionados= Contexto.VehiculoExtra.Where(ve => ve.vehiculoID == id).Select(ve => ve.extraID).ToList();
+
+            ViewBag.ExtraList = new MultiSelectList(Contexto.Extras, "Id", "Name", coche.ExtrasSeleccionados);
             return View(coche);
         }
 
@@ -90,6 +120,28 @@ namespace MVC2024.Controllers
             cocheAntiguo.Serie = cocheActualizado.Serie;
             cocheAntiguo.Color = cocheActualizado.Color;
             cocheAntiguo.SerieId = cocheActualizado.SerieId;
+            Contexto.SaveChanges();
+
+            var extrasActuales = Contexto.VehiculoExtra.Where(ve => ve.vehiculoID == id);
+
+            foreach (var extraAEliminar in extrasActuales)
+            { 
+                Contexto.VehiculoExtra.Remove(extraAEliminar);
+            }
+
+            foreach (int extraAAnyadir in cocheActualizado.ExtrasSeleccionados)
+            {
+                var ObjetoVehiculoExtra = new VehiculoExtraModelo()
+                {
+                    extraID = extraAAnyadir,
+                    vehiculoID = cocheActualizado.Id
+                };
+                Contexto.VehiculoExtra.Add(ObjetoVehiculoExtra);
+            }
+            //Contexto:Base de datos / VehiculoExtra: tabla
+            //Añadimos objetos de la clase VehiculoExtraModelo /  extraAAnyadir es un numeroEntero
+            //Creo un objeto nuevo, le doy valores iniciales, 
+
             Contexto.SaveChanges();
 
             try
@@ -117,7 +169,19 @@ namespace MVC2024.Controllers
         {
             Contexto.Vehiculos.Add(vehiculo);
             Contexto.Database.EnsureCreated();
+            Contexto.SaveChanges();                 //primero guarda los cambios, y asi asigna una id al vehiculo, y despues podremos trabajar con esta id
+
+            foreach (int xtraID in vehiculo.ExtrasSeleccionados) 
+            {
+                var obj= new VehiculoExtraModelo() //metodo constuctor de la clase VehiculoExtraModelo
+                {
+                    extraID = xtraID,
+                    vehiculoID = vehiculo.Id
+                };
+                Contexto.VehiculoExtra.Add(obj);
+            }
             Contexto.SaveChanges();
+
             try
             {
                 return RedirectToAction(nameof(Index));
