@@ -20,7 +20,7 @@ namespace MVC2024.Controllers
             return View(lista);
         }
 
-        public ActionResult Seleccionable()
+        public ActionResult Seleccionable()  //ejercicio sin terminar (modificar tabla vehiculo, añadir campo Id sucursal , solo mostrar los vehiculos quq sean de la sucursal)
         {
             ViewBag.sucur = new SelectList(Contexto.Sucursal, "Id", "Nombre");
             List<VehiculoModelo> listaV= Contexto.Vehiculos.ToList();

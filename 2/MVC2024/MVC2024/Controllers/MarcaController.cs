@@ -61,6 +61,8 @@ namespace MVC2024.Controllers
                 return View();
             }
         }
+
+        //nada trabajado a partir de aqui----------------------------->
         public ActionResult Details(int id)
         {
 

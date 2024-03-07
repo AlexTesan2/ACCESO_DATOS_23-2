@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVC2024.Models.VehiculoModelo>
+
+@{
+    ViewData["Title"] = "BuscoPorVendedor";
+}
+
+<h1>BuscoPorVendedor</h1>
+
+
+<form method="get">
+    <select id="busca" name="busca" class="form-control" asp-items="ViewBag.vendedores"></select>
+    <input type="submit" value="Busca!!" />
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Matricula)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Serie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vendedor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Serie.NomSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendedor.NomVendedor)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

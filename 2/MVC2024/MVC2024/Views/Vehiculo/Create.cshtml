@@ -31,6 +31,14 @@
                 <select multiple asp-for="ExtrasSeleccionados" class="form-control" asp-items="ViewBag.VehiculosExtras"></select>
             </div>
             <div class="form-group">
+                <label asp-for="VendedorId" class="control-label"></label>
+                <select asp-for="VendedorId" class="form-control" asp-items="ViewBag.VendedorID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="FotosDelCocheIds" class="control-label"></label>
+                <select multiple asp-for="FotosDelCocheIds" class="form-control" asp-items="ViewBag.fotos"></select>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>

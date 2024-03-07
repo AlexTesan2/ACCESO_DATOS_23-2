@@ -22,16 +22,16 @@ namespace MVC2024.Controllers
 
         public ActionResult ListadoVehiculoTotal()
         {
-            var ListaVehiculoTotal= Contexto.VistaTotal.FromSql($"SELECT Marcas.Nom_Marca, Series.NomSerie, Vehiculos.Matricula, Vehiculos.Color FROM Marcas INNER JOIN Series ON Marcas.Id = Series.MarcaId INNER JOIN Vehiculos ON Series.Id = Vehiculos.SerieId");
+            //List<VehiculoTotal> ListaVehiculoTotal = Contexto.VistaTotal.ToList();
+            var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"SELECT Marcas.Nom_Marca, Series.NomSerie, Vehiculos.Matricula, Vehiculos.Color FROM Marcas INNER JOIN Series ON Marcas.Id = Series.MarcaId INNER JOIN Vehiculos ON Series.Id = Vehiculos.SerieId");
             return View(ListaVehiculoTotal);
         }
-        //List<VehiculoTotal> ListaVehiculoTotal = Contexto.VistaTotal.ToList();
 
         public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado() //Para Agustin: Listado3
         {
             var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"EXECUTE getSeriesVehiculos");
             return View(ListaVehiculoTotal);
-        }
+        }//ejecutamos un procedimiento q se encuentra en el sql server
 
         public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado2(string color="%")
         {
@@ -56,9 +56,10 @@ namespace MVC2024.Controllers
         // GET: VehiculoController1
         public ActionResult Index()
         {
-            ViewBag.marcas=Contexto.Marcas.ToList();
-            List<VehiculoModelo> listav = Contexto.Vehiculos.Include(v => v.Serie.Marca).Include(v => v.VehiculoExtras).ToList();
+            List<VehiculoModelo> listav = Contexto.Vehiculos.Include(v => v.Serie.Marca).Include(v => v.VehiculoExtras).Include(v => v.Vendedor).Include(v => v.FotosDelCoche).ToList();
+            ViewBag.marcas = Contexto.Marcas.ToList();
             ViewBag.ex= Contexto.Extras.ToList();
+            ViewBag.fot = Contexto.fotos.ToList();
             return View(listav);
         }
 
@@ -69,7 +70,7 @@ namespace MVC2024.Controllers
             return View(lista);
         }
         //cuando abra la pagina busqueda, obligatoriamente tengo q pasarle un string, y sino dara error
-        //si no le pasas un tring, busca se cargara con "" , la primera vez q entras, busca no tendra nada, por eso lo cargamos con ""
+        //si no le pasas un string, busca se cargara con "" , la primera vez q entras, busca no tendra nada, por eso lo cargamos con ""
 
         public ActionResult Busqueda2(string busca = "")
         {
@@ -79,7 +80,15 @@ namespace MVC2024.Controllers
         }
         //parametros: 1-de donde saca los datos, 2-value (lo q se guarda), 3-text (lo q se vee) y 4-selected (seleccionado por defecto)
 
-        
+        public ActionResult BuscoPorVendedor(string busca = "")
+        {
+            ViewBag.vendedores = new SelectList(Contexto.vendedores, "NomVendedor", "NomVendedor", busca);
+            var lista = from v in Contexto.Vehiculos.Include(v => v.Vendedor).Include(v => v.Serie) where (v.Vendedor.NomVendedor.Equals(busca)) select v;
+            return View(lista);
+        }
+
+
+
         public ActionResult Seleccion(int marcaId = 1, int serieId= 0)
         {
             ViewBag.lasMarcas = new SelectList(Contexto.Marcas,"Id", "Nom_Marca", marcaId);
@@ -95,6 +104,8 @@ namespace MVC2024.Controllers
         {
             ViewBag.SerieId = new SelectList(Contexto.Series, "Id", "NomSerie");
             ViewBag.VehiculosExtras = new MultiSelectList(Contexto.Extras, "Id", "Name");
+            ViewBag.VendedorID = new SelectList(Contexto.vendedores, "Id", "NomVendedor");
+            ViewBag.fotos = new MultiSelectList(Contexto.fotos, "id", "nomFoto");
             return View();
         }
 
@@ -107,6 +118,8 @@ namespace MVC2024.Controllers
             coche.ExtrasSeleccionados= Contexto.VehiculoExtra.Where(ve => ve.vehiculoID == id).Select(ve => ve.extraID).ToList();
 
             ViewBag.ExtraList = new MultiSelectList(Contexto.Extras, "Id", "Name", coche.ExtrasSeleccionados);
+            ViewBag.Vendedor = new SelectList(Contexto.vendedores, "Id", "NomVendedor");
+
             return View(coche);
         }
 
@@ -120,6 +133,7 @@ namespace MVC2024.Controllers
             cocheAntiguo.Serie = cocheActualizado.Serie;
             cocheAntiguo.Color = cocheActualizado.Color;
             cocheAntiguo.SerieId = cocheActualizado.SerieId;
+            cocheAntiguo.VendedorId = cocheActualizado.VendedorId;
             Contexto.SaveChanges();
 
             var extrasActuales = Contexto.VehiculoExtra.Where(ve => ve.vehiculoID == id);
@@ -157,7 +171,7 @@ namespace MVC2024.Controllers
         // GET: VehiculoController1/Details/5
         public ActionResult Details(int id)
         {
-            VehiculoModelo vehiculo = Contexto.Vehiculos.Include(v => v.Serie.Marca).FirstOrDefault(v => v.Id == id);
+            VehiculoModelo vehiculo = Contexto.Vehiculos.Include(v => v.Serie.Marca).Include(v => v.Vendedor).FirstOrDefault(v => v.Id == id);
             return View(vehiculo);
         }
         // Otra opcion: Contexto.Vehiculos.Include("Serie.Marca")
@@ -179,6 +193,17 @@ namespace MVC2024.Controllers
                     vehiculoID = vehiculo.Id
                 };
                 Contexto.VehiculoExtra.Add(obj);
+            }
+            Contexto.SaveChanges();
+
+            foreach (int f in vehiculo.FotosDelCocheIds)
+            {
+                var obj = new VehiculoFotoModelo() //metodo constuctor de la clase VehiculoExtraModelo
+                {
+                    fotoId = f,
+                    vehiculoId= vehiculo.Id
+                };
+                Contexto.vehiculofotos.Add(obj);
             }
             Contexto.SaveChanges();
 

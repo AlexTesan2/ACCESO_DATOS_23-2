@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\alext\Desktop\AGUSTIN_2º\AAD\mio\2\MVC2024\MVC2024
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/foto/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm90b1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/foto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcZm90b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -70,6 +78,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3VjdXJzYWxcU2VsZWNjaW9uYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vehiculo/BuscoPorVendedor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cQnVzY29Qb3JWZW5kZWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vehiculo/Busqueda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cQnVzcXVlZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -116,6 +128,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vehiculo/Seleccion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVoaWN1bG9cU2VsZWNjaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vendedor/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGVkb3JcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vendedor/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGVkb3JcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vendedor/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGVkb3JcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vendedor/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGVkb3JcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/Vendedor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVmVuZGVkb3JcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/alext/Desktop/AGUSTIN_2º/AAD/mio/2/MVC2024/MVC2024/Views/_ViewImports.cshtml]

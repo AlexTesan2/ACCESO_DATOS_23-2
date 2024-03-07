@@ -27,7 +27,18 @@
             <th>
                 @Html.DisplayName("Extras")
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayName("Vendedor")
+            </th>
+            <th>
+                @Html.DisplayName("fotos")
+            </th>
+            <th>
+                @Html.DisplayName("tamañoExtras")
+            </th>
+            <th>
+                @Html.DisplayName("tamañoFoto")
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -57,6 +68,29 @@
                     }
                 </table>
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vendedor.NomVendedor)
+            </td>
+            <td>
+                <table>
+                    @foreach (var f in item.FotosDelCoche) 
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => f.foto.nomFoto)
+                            </td>
+                        </tr>
+
+                    }
+                </table>
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VehiculoExtras.Count)
+                </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.FotosDelCoche.Count)
+            </td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
