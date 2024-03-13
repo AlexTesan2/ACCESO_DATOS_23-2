@@ -28,8 +28,8 @@ namespace MVC2024.Models
         public DbSet<ExtraModelo> Extras { get; set; }
         public DbSet<VendedorModel> vendedores { get; set; }
         public DbSet<VehiculoExtraModelo> VehiculoExtra { get; set; }
-        public DbSet<FotoModelo> fotos { get; set; }
 
+        public DbSet<FotoModelo> fotos { get; set; }
         public DbSet<VehiculoFotoModelo> vehiculofotos { get; set; }
         //BbSet es una lista de objetos de la clase q le digas, tiene q llamarse igual al sqlServer
 

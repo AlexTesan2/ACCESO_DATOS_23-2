@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ExamenAADAlejandroTesan.Models.ProductosVendidos>
+
+@{
+    ViewData["Title"] = "ProcedimientoAlmacenado";
+}
+
+<h1>ProductosVendidos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("Nombre")
+            </th>
+            <th>
+                @Html.DisplayName("CantidadComprada")
+            </th>
+            <th>
+                @Html.DisplayName("PrecioCompraPromedio")
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadComprada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecioCompraPromedio)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

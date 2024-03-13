@@ -1,0 +1,59 @@
+﻿@model ExamenAADAlejandroTesan.Models.VentaModelo
+
+@{
+    ViewData["Title"] = "Examen2";
+}
+
+<h1>Examen2</h1>
+
+<form method="get">
+    <select id="productoId" name="productoId" class="form-control" asp-items="ViewBag.pr" onchange="this.form.submit()"></select>
+</form>
+
+<h2>Compras del Producto</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var compra in ViewBag.compras)
+        {
+            <tr>
+                <td>@compra.cantidad</td>
+                <td>@compra.precioUnitario</td>
+                <td>@compra.fecha</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h2>Ventas del Producto</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var venta in ViewBag.ventas)
+        {
+            <tr>
+                <td>@venta.cantidad</td>
+                <td>@venta.precioUnitario</td>
+                <td>@venta.fecha</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

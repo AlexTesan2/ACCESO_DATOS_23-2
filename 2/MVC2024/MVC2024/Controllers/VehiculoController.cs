@@ -27,6 +27,24 @@ namespace MVC2024.Controllers
             return View(ListaVehiculoTotal);
         }
 
+        public ActionResult DetallesDeLaVistaTotal(string id) {
+            if(id != null) {
+                var detalles = Contexto.VistaTotal.FromSql($"SELECT Marcas.Nom_Marca, Series.NomSerie, Vehiculos.Matricula, Vehiculos.Color FROM Marcas INNER JOIN Series ON Marcas.Id = Series.MarcaId INNER JOIN Vehiculos ON Series.Id = Vehiculos.SerieId");
+                foreach ( var item in detalles )
+                {
+                    if (item.Matricula == id)
+                    {
+                        return View(item);
+                    }
+                }
+                return View(detalles);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
         public ActionResult ListadoVehiculoTotalConProcedimientoAlmacenado() //Para Agustin: Listado3
         {
             var ListaVehiculoTotal = Contexto.VistaTotal.FromSql($"EXECUTE getSeriesVehiculos");
@@ -198,7 +216,7 @@ namespace MVC2024.Controllers
 
             foreach (int f in vehiculo.FotosDelCocheIds)
             {
-                var obj = new VehiculoFotoModelo() //metodo constuctor de la clase VehiculoExtraModelo
+                var obj = new VehiculoFotoModelo() //objeto tabla intermedia
                 {
                     fotoId = f,
                     vehiculoId= vehiculo.Id

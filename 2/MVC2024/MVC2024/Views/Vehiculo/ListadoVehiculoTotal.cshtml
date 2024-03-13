@@ -27,7 +27,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nom_Marca)
@@ -41,7 +41,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Color)
             </td>
-        </tr>
-}
+            <td>
+                <a asp-action="DetallesDeLaVistaTotal" asp-route-id="@item.Matricula">DetallesDeLaVistaTotal</a>
+            </td>
+            </tr>
+
+            <!--asp-route-id significa que espera rescibir un dato q en el controlador se llama id-->
+        }
     </tbody>
 </table>
